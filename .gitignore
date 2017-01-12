@@ -1,0 +1,4 @@
+.DS_Store
+out/
+packer_cache/
+/*.box
