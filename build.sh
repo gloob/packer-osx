@@ -2,8 +2,11 @@
 MAC_INSTALLER_DMG=$1
 OUTPUT_DIR=out
 
+# Create OUTPUT_DIR if it doesn't exists.
+mkdir -p $OUTPUT_DIR
+
 # Prepare the image and write the processed image in out directory.
-sudo upstream/prepare_iso/prepare_iso.sh -D DISABLE_REMOTE_MANAGEMENT -i .resources/gpii.jpg "$MAC_INSTALLER_DMG" $OUTPUT_DIR
+sudo upstream/prepare_iso/prepare_iso.sh -D DISABLE_REMOTE_MANAGEMENT -i ./resources/gpii.jpg "$MAC_INSTALLER_DMG" $OUTPUT_DIR
 
 # Check we have a processed image in the out directory.
 PROCESSED_IMAGE=$(ls -1 $OUTPUT_DIR)
